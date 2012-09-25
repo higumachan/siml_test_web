@@ -1,0 +1,12 @@
+<Site>
+	<Domain></Domain>
+	<Date>
+		<identifier class="date"/>
+		<Scheme>%Y-%m-%d</Scheme>
+		<Scheme_Re>[0-9]+\-[0-9]+\-[0-9]+</Scheme_Re>
+	</Date>
+	<Text>
+		<identifier class="^section$"/>
+	</Text>
+</Site>
+

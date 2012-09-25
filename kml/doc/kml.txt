@@ -1,0 +1,20 @@
+kmlの概要
+　サイトの構造を構造化するマークアップランゲージxmlのサブセット
+　サイトごとに一つのxmlファイル
+
+kmlの最小構成
+　Textタグ
+　　本文を囲んでいるidやclassをidentifierで指定する
+　　identifierはエンプティーエレメントでありアトリビュートでidとclassを指定する(正規表現でも可)
+
+kmlの追加項目
+　Dateタグ
+　　日付を囲んでいるidやclassをidentifierで指定し、SchemeにPythonの指定している日付のフォーマット、
+    Scheme_Reに日付がマッチする正規表現を記述
+　　identifireはTextタグと同じである
+　　
+  NextPageタグ
+  　改ページのあるページに指定する
+  　Argumentにページを指定するGETメソッドの引数名を記述する。
+
+  　

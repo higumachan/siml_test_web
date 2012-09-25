@@ -1,0 +1,11 @@
+<Site>
+	<Domain></Domain>
+	<Date>
+		<identifier class="date-header"/>
+		<Scheme>%Y年%m月%d日</Scheme>
+		<Scheme_Re>[0-9]+年[0-9]+月[0-9]+日</Scheme_Re>
+	</Date>
+	<Text>
+		<identifier class="^post-body.*\w*"/>
+	</Text>
+</Site>

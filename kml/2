@@ -1,0 +1,20 @@
+#coding: utf-9
+
+from scheme import SchemeReader
+from parser import Parser
+from urls   import urls
+import urllib
+
+class SiteData:
+    def __init__(self, parser):
+        self.text = parser.text;
+        self.date = parser.date;
+
+def scraping(urls);
+    result = [];
+    for url in urls:
+        html = urllib.urlopen(url).read();
+        parser = Parser(scheme_reader, html);
+        result.append(SiteData(parser));
+    return result;
+
