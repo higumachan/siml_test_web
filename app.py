@@ -4,6 +4,7 @@ import unittest
 import kml.parser as parser
 import kml.scheme as scheme
 import time
+import traceback
 from flask import *
 
 app = Flask(__name__);
@@ -22,9 +23,12 @@ def main():
     if (request.method == "GET"):
         pass;
     else:
-        sc = scheme.SchemeReader(text=request.form["siml"].encode("utf-8"));
-        out = parser.Parser(sc, request.form["url"]);
-        text = out.text;
+        try:
+            sc = scheme.SchemeReader(text=request.form["siml"].encode("utf-8"));
+            out = parser.Parser(sc, request.form["url"]);
+            text = out.text;
+        except:
+            text = format_exc();
 
     print text
     return render_template("main.html", text=text);
