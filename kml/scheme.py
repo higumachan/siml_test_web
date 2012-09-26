@@ -1,5 +1,5 @@
 import BeautifulSoup
-from xml.etree.ElementTree import ElementTree
+from xml.etree.ElementTree import ElementTree, fromstring
 
 
 class DateScheme:
@@ -17,15 +17,19 @@ class NextPageScheme:
         self.argument = tag.find("Argument").text;
 
 class SchemeReader:
-    def __init__(self, file_name):
-        f = open(file_name);
+    def __init__(self, file_name=None, text=None):
         """
         self.xml = f.read();
         self.parse();
         """
-        self.root = ElementTree(file=f);
-        self.parse();
-        f.close();
+        if (file_name):
+            f = open(file_name);
+            self.root = ElementTree(file=f);
+            self.parse();
+            f.close();
+        elif (text):
+            self.root = fromstring(text);
+            self.parse();
     
     def parse(self):
         """

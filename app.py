@@ -22,10 +22,7 @@ def main():
     if (request.method == "GET"):
         pass;
     else:
-        f = open("test.xml", "w");
-        f.write(request.form["siml"].encode("utf-8"));
-        f.close();
-        sc = scheme.SchemeReader("test.xml");
+        sc = scheme.SchemeReader(text=request.form["siml"].encode("utf-8"));
         out = parser.Parser(sc, request.form["url"]);
         text = out.text;
 
